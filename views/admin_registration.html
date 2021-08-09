@@ -9,7 +9,7 @@
     <!-- Add style -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/auth.css">
-    <title>Créer un compte &centerdot; Professeur</title>
+    <title>Créer un compte &centerdot; Administration</title>
 </head>
 <body>
 
@@ -33,6 +33,7 @@
     </div>
 
     <!-- Registration form -->
+
     <div class="auth-form-container">
 
         <div class="section-content">
@@ -49,15 +50,23 @@
                         <input type="text" class="form-control" name="last-name" id="last-name" required>
                     </div>
 
+                     <div class="form-group">
+                        <label for="role"><b>Rôle administratif</b></label>
+                        <select name="role" id="role" class="form-control" required>
+                            <option value="censor">Censeur</option>
+                            <option value="informatician">Chargé des affaires informatiques</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="matricule"><b>Numéro matricule</b></label>
+                        <input type="text" class="form-control" name="matricule" id="matricule" required>
+                    </div>
                     <div class="form-group">
                         <label for="email"><b>Email</b></label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="ex:milo@gmail.com" required>
                     </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="teacher" id="teacher" value="teacher" hidden>
-                    </div>
-                     
+                    
                     <div class="form-group">
                         <label for="password"><b>Mot de passe</b></label>
                         <input type="password" class="form-control" name="password" id="password" required>
@@ -67,7 +76,6 @@
                         <label for="password_confirmation"><b>Confirmer le mot de passe</b></label>
                         <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" required>
                         <b><i class="help-block"></i></b>
-
                     </div>
                     
                     <div class="form-group">

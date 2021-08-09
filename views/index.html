@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Add style -->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <title>Accueil &centerdot; ePatriote Dev High School</title>
 </head>
 <body>
 
@@ -16,18 +17,18 @@
     <div class="home">
         <div class="header">
             <div class="nav">
-                <div class="nav-logo left">LOGO </div>
+                <div class="nav-logo left"> <a href="./index.html"> LOGO</a>  </div>
                 <div class="left">|</div>
                 <div class="nav-items left">
-                    <a class="nav-link" href="/views/index.html"> <i class="fa fa-home"></i> Accueil </a>
-                    <a class="nav-link" href="/views/about.html"> <i class="fa fa-info-circle"></i> A propos </a>
-                    <a class="nav-link" href="/views/contact.html"> <i class="fa fa-send"></i> Contact </a>
+                    <a class="nav-link" href="./index.html"> <i class="fa fa-home"></i> Accueil </a>
+                    <a class="nav-link" href="./about.html"> <i class="fa fa-info-circle"></i> A propos </a>
+                    <a class="nav-link" href="./contact.html"> <i class="fa fa-send"></i> Contact </a>
                 </div>
 
                 <div class="nav-items right">
-                    <a href="/views/login.html" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
+                    <a href="#" id="trigger" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
                     &CenterDot;
-                    <a href="/views/login.html" class="nav-link"> Se connecter</a>
+                    <a href="./login.html" class="nav-link"> Se connecter</a>
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@
                     <i class="fa fa-refresh"></i>
                     <h3 class="overview-title">Informations en temps réel</h3>
                     <p class="overview-description">
-                        Toutes les informations sont mise à jour et ce régulièrement pour votre confort.
+                        Toutes les informations sont mises à jour et ce régulièrement pour votre confort.
                     </p>
                 </div>
             </div>
@@ -75,11 +76,35 @@
         </div>
 
 
+
+        <!--Registration type select-->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Qui êtes vous ?</h2>
+                </div>
+                <div class="modal-body">
+                    <a href="./students/register.html" class="nav-link btn btn-primary"> Elève </a>
+                    <a href="./parents/register.html" class="nav-link btn btn-primary"> Parent d'élève </a>
+                    <a href="./teachers/register.html" class="nav-link btn btn-primary"> Professeur </a>
+                    <a href="./admin_registration.html" class="nav-link btn btn-primary"> Membre de l'administration </a>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Footer -->
         <div class="footer">
             Copyright &copy; 2021 &centerdot; ePatriote Dev High School
         </div>
 
     </div>
+
+    <script src="/assets/js/registrationType.js"></script>
 </body>
 </html>
