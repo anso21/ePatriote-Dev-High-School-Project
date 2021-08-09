@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add style -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <title>Connexion au compte utilisateur</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="nav">
+            <div class="nav-logo left">LOGO </div>
+            <div class="left">|</div>
+            <div class="nav-items left">
+                <a class="nav-link" href="/views/index.html"> <i class="fa fa-home"></i> Accueil </a>
+                <a class="nav-link" href="/views/about.html"> <i class="fa fa-info-circle"></i> A propos </a>
+                <a class="nav-link" href="/views/contact.html"> <i class="fa fa-send"></i> Contact </a>
+            </div>
+
+            <div class="nav-items right">
+                <a href="/views/login.html" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
+                &CenterDot;
+                <a href="/views/login.html" class="nav-link"> Se connecter</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login form -->
+
+    <div class="auth-form-container">
+
+        <div class="section-content">
+            <div class="container">
+
+                <div class="alert"></div>
+                <form>
+                    <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="ex:milo@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><b>Mot de passe</b></label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary "> <i class="fa fa-lock"></i> Se connecter</button>
+
+                    <p>
+                        <a href="/views/recover_password.html">Mot de passe oublié ?</a>
+                    </p>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="margin-top: 0%;">
+        Copyright &copy; 2021 &centerdot; ePatriote Dev High School
+    </div>
+
+    <script src="/assets/js/login.js"></script>
+    
+</body>
+</html>

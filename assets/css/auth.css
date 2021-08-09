@@ -1,0 +1,33 @@
+.auth-form-container{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-image: url(/assets/images/auth.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.section-content{
+    width: 30%;
+    background-color: #ebebeb6b;
+    padding: 4% 10%;
+    border-radius: 3px ;
+}
+
+.btn-primary{
+    color: white;
+    background-color: #081D5B;
+    box-shadow: none;
+}
+
+.btn-primary:hover{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.397);
+}
+
+.help-block{
+    color: #721c24 ;
+    display: none;
+    font-style:normal;
+    font-size: 14px;
+}

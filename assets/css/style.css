@@ -1,0 +1,244 @@
+html,body {
+    margin: 0;
+    width: 100%;
+}
+
+
+/* Home style */
+
+.home, .header, .nav {
+    width: 100%;
+}
+
+.home{
+    height: 650px;
+    background: url(/assets/images/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header */
+.spacer{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.header{
+    height: 60px;
+    background: #ebebeb91;
+    overflow: hidden;
+    /* opacity: .6; */
+}
+
+.nav > div {
+    display: inline-block;
+    padding: 20px 24px;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.nav-logo{
+    font-weight: bold;
+    font-size: 20px;
+    color: #081D5B;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #081D5B;
+    margin: 24px 12px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nav-link:hover, .nav-link:focus{
+    color: rgba(0, 0, 0, 0.705);
+}
+
+
+/* Welcome */
+.home-title{
+    width: 500px;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+    justify-self: center;
+    background: #d1d1d170;
+    padding: 48px 24px;
+    font-size: 28px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    justify-items: center;
+    text-justify: auto;
+    text-align: center;
+}
+
+.home-title .school-name{
+    color: #081D5B ;
+}
+
+/* Overview row */
+.col-3{
+    width: 33.33%;
+    display: inline-block;
+    margin: 16px;
+    justify-content: center;
+    text-align: center;
+    color: #081D5B;
+    font-size: 18px;
+}
+
+.col-3 i{
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    transition: all .5s;
+}
+.col-3 i:hover{
+    transform: scale(1.5, 1.5);
+}
+
+.col-3 p{
+    color: black ;
+    font-size: 18px;
+}
+
+.overview-row{
+    overflow: hidden;
+    padding: 100px 3px;
+}
+
+.overview-container{
+    width: 90%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.397);
+    padding: 32px 24px;
+    margin: auto;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+.btn{
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.397);
+    padding: 12px 24px;
+    border: none;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.more{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-primary{
+    color: #081D5B;
+    border: 1px solid  #081D5B;
+    transition: all .5s;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #081D5B;
+}
+
+
+/* ABout */
+
+.section-content{
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    justify-self: center;
+}
+
+.section-title{
+    border-left: 3px solid #081D5B;
+    padding: 10px;
+    border-radius: 3px;
+    color: #081D5B;
+    font-size: 24px;
+}
+
+/* Contact form */
+
+.container{
+    width: 100%;
+}
+
+
+.form-group{
+    width: 100%;
+    margin: 15px 5px;
+}
+
+label{
+    display: block;
+    margin-bottom: 3px;
+    color: #081D5B;
+}
+
+.form-control{
+    width: 100%;
+    /* height: 38px; */
+    padding: 5px 15px;
+}
+
+textarea.form-control{
+    height: 48px;
+}
+
+.btn.submit{
+    box-shadow: none;
+    float: right;
+}
+
+.alert{
+    display: none;
+    position:relative;
+    padding:.75rem 1.25rem;margin-bottom:1rem;
+    border:1px solid transparent;
+    border-radius:.25rem
+}
+
+.alert-danger{
+    color:#721c24;
+    background-color:#f8d7da;
+    border-color:#f5c6cb
+}
+
+.alert-success{
+    color:#155724;
+    background-color:#d4edda;
+    border-color:#c3e6cb
+}
+
+
+/* Login form */
+
+/* footer */
+.footer{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-top: 6%;
+    background-color: #081D5B;
+    color: white;
+    font-weight: bold;
+    /* font-size: 20px; */
+}
