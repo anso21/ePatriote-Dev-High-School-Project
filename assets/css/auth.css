@@ -15,15 +15,6 @@
     border-radius: 3px ;
 }
 
-.form-btn{
-    color: white;
-    background-color: #081D5B;
-    box-shadow: none;
-}
-
-.form-btn:hover{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.397);
-}
 
 .help-block{
     color: #721c24 ;

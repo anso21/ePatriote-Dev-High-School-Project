@@ -13,6 +13,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     makeActive();
     openModal();
+    toggleResponsiveMenu()
 });
 
 
@@ -23,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
  */
 function makeActive() {
     // Get all menu items
-    let navItems = document.querySelectorAll('.nav-items .nav-link');
+    let navItems = document.querySelectorAll('.nav .nav-link');
     // Get the actual url
     let href = location.href
 
@@ -32,6 +33,23 @@ function makeActive() {
         if (item.href === href) {
             item.classList.toggle('active');
         }
+    });
+}
+
+
+/**
+ * 
+ * Toggle to responsive menu
+ * 
+ */
+function toggleResponsiveMenu() {
+    let trigger = document.getElementById('menu-icon');
+    let navbar = document.getElementById('nav-items');
+
+    trigger.addEventListener('click', (e)=> {
+        e.preventDefault();
+        navbar.classList.toggle('responsive');
+        
     });
 }
 

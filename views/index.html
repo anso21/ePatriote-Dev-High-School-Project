@@ -9,28 +9,31 @@
     <!-- Add style -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- <link rel="stylesheet" href="/assets/css/auth.css"> -->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <title>Accueil &centerdot; ePatriote Dev High School</title>
 </head>
 <body>
 
     <!-- The home section -->
     <div class="home">
-        <div class="header">
-            <div class="nav">
-                <div class="nav-logo left"> <a href="./index.html"> LOGO</a>  </div>
-                <div class="left">|</div>
-                <div class="nav-items left">
-                    <a class="nav-link" href="./index.html"> <i class="fa fa-home"></i> Accueil </a>
-                    <a class="nav-link" href="./about.html"> <i class="fa fa-info-circle"></i> A propos </a>
-                    <a class="nav-link" href="./contact.html"> <i class="fa fa-send"></i> Contact </a>
-                </div>
+        <div class="nav" id="nav">
+            <a class="left nav-logo" href="./index.html"> LOGO</a>
+            <div class="nav-items" id="nav-items">
+                <a class="nav-link left" href="./index.html"> <i class="fa fa-home"></i> Accueil </a>
+                <a class="nav-link left" href="./about.html"> <i class="fa fa-info-circle"></i> A propos </a>
+                <a class="nav-link left" href="./contact.html"> <i class="fa fa-send"></i> Contact </a>
+                
+                <a href="./login.html" class="nav-link right"> Se connecter</a>
+                
+                <i class="dot nav-link right">&CenterDot;</i>
+                
+                <a href="#" id="trigger" class="nav-link right"> <i class="fa fa-user"></i> S'inscrire</a>
 
-                <div class="nav-items right">
-                    <a href="#" id="trigger" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
-                    &CenterDot;
-                    <a href="./login.html" class="nav-link"> Se connecter</a>
-                </div>
             </div>
+            <a class="nav-link menu-icon right" id="menu-icon">
+                <!-- <i class="fa fa-bars"></i> -->
+                <i>&#9776;</i>
+            </a>
         </div>
 
         <div class="spacer"></div>
