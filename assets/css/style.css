@@ -162,16 +162,13 @@ html,body {
 }
 
 
-/* ABout */
-
-
 
 /* Contact form */
 .container-fluid{
     width: 100%;
 }
 .container{
-    width: 70%;
+    width: 90%;
     margin: auto;
     justify-content: center;
     justify-self: center;
@@ -196,23 +193,13 @@ html,body {
     background-image: url('/assets/images/contactusheader.jpg');
 }
 
-.banner-about{
-    background-image: url('/assets/images/aboutUs.png');
-}
-
 .col-6{
     width: 40%;
     display: inline-block;
-    padding: 48px 24px 0px 24px;
+    padding: 48px 16px 0px 16px;
     box-sizing: border-box;
 }
 
-.about-text{
-    padding: 30px 10% 0px 10%;
-}
-.about-text p{
-    text-align: justify;
-}
 
 .contact{
     display: flex;
@@ -232,10 +219,6 @@ html,body {
 
 .form-btn:hover{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.397);
-}
-
-.container{
-    width: 100%;
 }
 
 
@@ -285,6 +268,21 @@ textarea.form-control{
     border-color:#c3e6cb
 }
 
+
+/* ABout */
+
+
+.about-text{
+    padding: 30px 10% 0px 10%;
+}
+
+.banner-about{
+    background-image: url('/assets/images/aboutUs.png');
+}
+
+.about-text p{
+    text-align: justify;
+}
 
 /* Registration type select */
 

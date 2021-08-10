@@ -8,11 +8,13 @@
 
 }
 
-.section-content{
-    width: 30%;
+form{
+    width: 40%;
     background-color: #ebebeb6b;
-    padding: 4% 10%;
+    padding: 4% 7%;
     border-radius: 3px ;
+    margin: auto;
+    
 }
 
 
