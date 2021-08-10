@@ -57,9 +57,10 @@ html,body {
     font-weight: bold;
 }
 
-.nav-link:hover, .nav-link:focus{
+.nav-link:hover, .nav-link:focus, .active{
     color: rgba(0, 0, 0, 0.705);
 }
+
 
 
 /* Welcome */
@@ -144,12 +145,12 @@ html,body {
     text-align: center;
 }
 
-.btn-primary{
+.btn-primary, .about-btn{
     color: #081D5B;
     border: 1px solid  #081D5B;
     transition: all .5s;
 }
-.btn-primary:hover{
+.btn-primary:hover, .about-btn:hover{
     color: white;
     background-color: #081D5B;
 }

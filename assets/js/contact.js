@@ -1,46 +1,59 @@
-let form =  document.querySelector('form');
-let alertField = document.querySelector('.alert');
-let url = ""    //link to the contact file located on the server
+/**
+ * 
+ * Contact managment script
+ * 
+ * @author Anselme Zodehougan
+ * @link https://github.com/anso21
+ * 
+ * 
+ */
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.onreadystatechange = () => {
+window.addEventListener('DOMContentLoaded', (e)=> {
+    let form =  document.querySelector('form');
+    let alertField = document.querySelector('.alert');
+    let url = ""    //link to the contact file located on the server
 
-        if (xhr.readyState === 4) {
-            let response = "";
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            if(xhr.status === 200) {
-                response = xhr.responseText;
-                if(alertField.classList.contains('alert-danger')) {
-                    alertField.classList.replace('alert-danger', 'alert-success');
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.onreadystatechange = () => {
+
+            if (xhr.readyState === 4) {
+                let response = "";
+
+                if(xhr.status === 200) {
+                    response = xhr.responseText;
+                    if(alertField.classList.contains('alert-danger')) {
+                        alertField.classList.replace('alert-danger', 'alert-success');
+                    } else{
+                        alertField.classList.add('alert-success');
+                    }
                 } else{
-                    alertField.classList.add('alert-success');
+                    if(alertField.classList.contains('alert-success')) {
+                        alertField.classList.replace('alert-success', 'alert-danger');
+                    } else{
+                        alertField.classList.add('alert-danger');
+                    }
+                    response = xhr.responseText;
                 }
-            } else{
-                if(alertField.classList.contains('alert-success')) {
-                    alertField.classList.replace('alert-success', 'alert-danger');
-                } else{
-                    alertField.classList.add('alert-danger');
-                }
-                response = xhr.responseText;
+
+                //Display Flash message
+                alertField.textContent = response;
+                alertField.style.display = "block";
+                setTimeout(() => {
+                    alertField.style.display = "none"
+                }, 5000);
+
             }
-
-            //Display Flash message
-            alertField.textContent = response;
-            alertField.style.display = "block";
-            setTimeout(() => {
-                alertField.style.display = "none"
-            }, 5000);
-
         }
-    }
 
-    // create new FormData
-    formData = new FormData(form);
+        // create new FormData
+        formData = new FormData(form);
 
-    // Send request
-    xhr.send(formData);
+        // Send request
+        xhr.send(formData);
+    });
 });

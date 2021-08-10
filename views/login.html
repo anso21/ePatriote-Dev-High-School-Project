@@ -25,7 +25,7 @@
             </div>
 
             <div class="nav-items right">
-                <a href="/views/login.html" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
+                <a href="#" id="trigger" class="nav-link"> <i class="fa fa-user"></i> S'inscrire</a>
                 &CenterDot;
                 <a href="/views/login.html" class="nav-link"> Se connecter</a>
             </div>
@@ -50,13 +50,34 @@
                         <input type="password" class="form-control" name="password" id="password" required>
                     </div>
     
-                    <button type="submit" class="btn btn-primary "> <i class="fa fa-lock"></i> Se connecter</button>
+                    <button type="submit" class="btn form-btn"> <i class="fa fa-lock"></i> Se connecter</button>
 
                     <p>
                         <a href="/views/recover_password.html">Mot de passe oublié ?</a>
                     </p>
                     
                 </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Registration type select-->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Qui êtes vous ?</h2>
+            </div>
+            <div class="modal-body">
+                <a href="./students/register.html" class="nav-link btn btn-primary"> Elève </a>
+                <a href="./parents/register.html" class="nav-link btn btn-primary"> Parent d'élève </a>
+                <a href="./teachers/register.html" class="nav-link btn btn-primary"> Professeur </a>
+                <a href="./admin_registration.html" class="nav-link btn btn-primary"> Membre de l'administration </a>
             </div>
         </div>
     </div>
@@ -69,5 +90,7 @@
     <!-- Login script -->
     <script src="/assets/js/login.js"></script>
     
+    <!-- Common script -->
+    <script src="/assets/js/index.js"></script>
 </body>
 </html>
