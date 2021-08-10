@@ -89,12 +89,16 @@
     }
 
     /* Form */
-    form{
+    .auth-form{
         width: 70%;
     }
 
     .form-btn{
         font-size: .8em;
+    }
+
+    .modal-body a{
+        display: block;
     }
 
 } 

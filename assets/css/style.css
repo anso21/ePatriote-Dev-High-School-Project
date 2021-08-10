@@ -235,12 +235,13 @@ label{
 
 .form-control{
     width: 100%;
+    padding: 12px 15px;
     box-sizing: border-box;
 }
 
 textarea.form-control{
     height: 60px;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 .btn.submit{
@@ -307,10 +308,10 @@ textarea.form-control{
     top: 100px;
     background-color: #fefefe;
     margin: auto;
-    padding: 0;
+    padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    height: 150px;
+    height: auto;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -350,9 +351,11 @@ textarea.form-control{
     color:#081D5B;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 2px 16px; margin: 5px;}
 
-
+.modal-body a{
+    margin: 10px
+}
 /* footer */
 .footer{
     width: 100%;
