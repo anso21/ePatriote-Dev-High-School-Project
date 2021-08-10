@@ -37,32 +37,50 @@
 
     <!-- Contact section -->
 
-    <div class="section-content">
-        <h2 class="section-title">Contact</h2>
+    <div class="container-fluid">
+        <div class="banner banner-contact"><h1>Contact</h1></div>
+        <div class="container contact">
+            <div class="headquaters col-6">
+                <h3>Comment nous contacter ?</h3>
+                <p>
+                    Si vous avez une inquiétude, vous pouvez nous envoyer un message en remplissant le formulaire ci-après. Si vous êtes dans les environs de <strong>ePatriote  Dev High School</strong>, vous pouvez nous visiter à notre emplacement physique.
+                </p>
 
-        <div class="alert">
-            kjn
-        </div>
+                <!-- <br> -->
 
-        <div class="container">
-            <form>
-                <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input type="text" class="form-control" name="name" id="name" >
-                </div>
-               
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="ex:milo@gmail.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" class="form-control" placeholder="votre message..." required ></textarea>
-                </div>
+                <h4><b>Nos contacts</b></h4>
+                <p>
+                    Téléphone : 0000000000 <br>
+                    E-mail : example@gmail.com
+                </p>
 
-                <button type="submit" class="btn form-btn" > Envoyer un message</button>
-                
-            </form>
+            </div>
+
+            <div class="contact-form col-6">
+                <form>
+                    <div class="form-group">
+                        <label for="first-name"><b>Nom</b></label>
+                        <input type="text" class="form-control" name="first-name" id="first-name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name"><b>Prénoms</b></label>
+                        <input type="text" class="form-control" name="last-name" id="last-name" >
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email"><b>E-mail</b></label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="ex:milo@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><b>Message</b></label>
+                        <textarea name="message" id="message" class="form-control" placeholder="Votre message..." required ></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn form-btn" > <i class="fa fa-send"></i> Envoyer un message</button>
+                    
+                </form>
+            </div>
+
         </div>
     </div>
 
