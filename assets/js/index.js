@@ -9,7 +9,6 @@
  */
 
 
-
 // Wait while the DOM content be loaded before execute functions
 window.addEventListener('DOMContentLoaded', (e) => {
 
@@ -35,7 +34,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         result => {
             makeActive();
             toggleResponsiveMenu();
-            
 
             // Now we include the modal layout before execute openModal()
             includeLayout('myModal', 'modal.html').then(
@@ -68,10 +66,12 @@ function makeActive() {
     let navItems = document.querySelectorAll('.nav .nav-link');
     // Get the actual url
     let href = location.href
+    // console.log(href);
 
     // Itterate the navItems to get the active 
     navItems.forEach((item) => {
         if (item.href === href) {
+            console.log('ok');
             item.classList.toggle('active');
         }
     });
@@ -93,7 +93,7 @@ function includeLayout(id, url) {
     let baseUrl = '/views/layouts/';
 
     let element = document.getElementById(id);
-    let loader = document.getElementById('loader');
+    // let loader = document.getElementById('loader');
 
     return new Promise( (resolve, reject ) => {
         let xhr = new XMLHttpRequest();
@@ -109,10 +109,10 @@ function includeLayout(id, url) {
                     resolve('Layout loaded successfully !');
                 }
                 reject('Layout not loaded !');
-                loader.style.display = 'none';
+                // loader.style.display = 'none';
 
             } else {
-                loader.style.display = 'block'
+                // loader.style.display = 'block'
             }
         }
         xhr.send();
@@ -197,8 +197,33 @@ function openModal(){
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener('click', (e)=>{
-    if (e.target == modal) {
-        modal.style.display = "none";
-    }
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
+
+/**
+ * 
+ * This function check if the passwords fields are matching
+ * 
+ * @param passwordConfirmation HTMLInputElement 
+ * @param password HTMLInputElement : the reference field
+ * 
+ * @returns void
+ */
+
+function passwordFieldsChecker(passwordConfirmation, password) {
+    passwordConfirmation.addEventListener('input', (e) => {
+        let value = e.target.value;
+        if (value !== password.value) {
+            passwordConfirmation.style.boxShadow = '0 0 5px red';
+            helpBlock.style.display = 'block';
+            helpBlock.textContent = 'Les mots de passe ne se correspondent pas !'
+        } else {
+            helpBlock.style.display = 'none';
+            passwordConfirmation.style.boxShadow = 'none';
+        }
     });
 }

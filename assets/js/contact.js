@@ -12,16 +12,26 @@
 window.addEventListener('DOMContentLoaded', (e)=> {
     let form =  document.querySelector('form');
     let alertField = document.querySelector('.alert');
+    let formBtn = document.querySelector('button[type=submit]');
     let url = ""    //link to the contact file located on the server
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Disable the submit btn and change the content
+        formBtn.disabled = true;
+        formBtn.lastChild.data = ' Envoie en cours...';
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.onreadystatechange = () => {
 
             if (xhr.readyState === 4) {
+
+                // Retablish the normal behaviour
+                formBtn.disabled = false;
+                formBtn.lastChild.data = ' Envoyer un message';
+
                 let response = "";
 
                 if(xhr.status === 200) {

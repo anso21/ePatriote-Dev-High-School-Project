@@ -13,11 +13,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
     let form =  document.querySelector('form');
     let alertField = document.querySelector('.alert');
-    let url = ""                                            //link to the contact file located on the server
+    let formBtn = document.querySelector('button[type=submit]');
+    let url = ""     //link to the contact file located on the server
     let baseUrl = "/views" ;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Disable the submit btn and change the content
+        formBtn.disabled = true;
+        formBtn.lastChild.data = ' Connexion en cours...';
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
@@ -25,8 +30,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
             if (xhr.readyState === 4) {
                 
+                // Retablish the normal behaviour
+                formBtn.disabled = false;
+                formBtn.lastChild.data = ' Se connecter';
+                
                 if(xhr.status === 200) {
-                    let response = "";
                     /**
                      * The response here will be the type of user:
                      *      - Student
@@ -37,7 +45,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
                      * 
                      * So according to the type we will redirect user
                      */
-                    response = xhr.responseText;
+                    let response = xhr.responseText;
+                    
                     if (response === 'student') {
                         location.href = `${baseUrl}/students/dashboard.html`;
                     } else if (response === 'parent') {
@@ -61,10 +70,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     //Display Flash message to indiacte the errors to users
                     alertField.textContent = response;
                     alertField.style.display = "block";
+
                     setTimeout(() => {
                         alertField.style.display = "none"
                     }, 5000);
-
                 }
 
             }

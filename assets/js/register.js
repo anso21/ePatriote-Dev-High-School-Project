@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', (e)=>{
     let form =  document.querySelector('form');
     let alertField = document.querySelector('.alert');
     let url = ""    //link to the contact file located on the server
+    let formBtn = document.querySelector('button[type=submit]');
+
 
     let helpBlock = document.querySelector('.help-block');
     let password = document.getElementById('password');
@@ -36,11 +38,19 @@ window.addEventListener('DOMContentLoaded', (e)=>{
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        // Disable the submit btn and change the content
+        formBtn.disabled = true;
+        formBtn.lastChild.data = ' Inscription en cours...';
+
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.onreadystatechange = () => {
 
             if (xhr.readyState === 4) {
+
+                 // Retablish the normal behaviour
+                 formBtn.disabled = false;
+                 formBtn.lastChild.data = " S'inscrire";
 
                 if(xhr.status === 200) {
                     /**
@@ -72,10 +82,12 @@ window.addEventListener('DOMContentLoaded', (e)=>{
                     } else{
                         alertField.classList.add('alert-danger');
                     }
+
                     let response = xhr.responseText;
                     //Display Flash message
                     alertField.textContent = response;
                     alertField.style.display = "block";
+
                     setTimeout(() => {
                         alertField.style.display = "none"
                     }, 5000);

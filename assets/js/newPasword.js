@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', (e)=>{
     let form =  document.querySelector('form');
     let alertField = document.querySelector('.alert');
     let url = ""    //link to the contact file located on the server
+    let formBtn = document.querySelector('button[type=submit]');
 
     let helpBlock = document.querySelector('.help-block');
     let password = document.getElementById('password');
@@ -36,20 +37,27 @@ window.addEventListener('DOMContentLoaded', (e)=>{
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        // Disable the submit btn and change the content
+        formBtn.disabled = true;
+        formBtn.lastChild.data = ' Changement en cours...';
+
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.onreadystatechange = () => {
 
             if (xhr.readyState === 4) {
+
+                // Retablish the normal behaviour
+                formBtn.disabled = false;
+                formBtn.lastChild.data = ' Changer mon mot de passe';
+                
+
                 let response = "";
 
                 if(xhr.status === 200) {
                     response = xhr.responseText;
-                    if(alertField.classList.contains('alert-danger')) {
-                        alertField.classList.replace('alert-danger', 'alert-success');
-                    } else{
-                        alertField.classList.add('alert-success');
-                    }
+                    // Redirect user to login page
+                    location.href = '/views/login.html';
                 } else{
                     if(alertField.classList.contains('alert-success')) {
                         alertField.classList.replace('alert-success', 'alert-danger');
@@ -62,6 +70,7 @@ window.addEventListener('DOMContentLoaded', (e)=>{
                 //Display Flash message
                 alertField.textContent = response;
                 alertField.style.display = "block";
+
                 setTimeout(() => {
                     alertField.style.display = "none"
                 }, 5000);

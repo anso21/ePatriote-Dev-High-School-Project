@@ -90,7 +90,7 @@
 
     /* Form */
     .auth-form{
-        width: 70%;
+        width: 80%;
     }
 
     .form-btn{
@@ -100,5 +100,4 @@
     .modal-body a{
         display: block;
     }
-
 } 
