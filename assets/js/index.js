@@ -13,11 +13,29 @@
 // Wait while the DOM content be loaded before execute functions
 window.addEventListener('DOMContentLoaded', (e) => {
 
+    // After all we create a loader element and append it to the body
+
+    // Create the loader with its attributes
+    let loader = document.createElement('div');
+    loader.setAttribute('class', 'loader');
+    loader.setAttribute('id', 'loader');
+
+    // Create the loader content with its attributes
+    let loaderContent = document.createElement('div')
+    loaderContent.setAttribute('class', 'loader-content');
+
+    // Append the loaderContent to loader
+    loader.appendChild(loaderContent);
+
+    // Append the loader to the body
+    document.body.appendChild(loader);
+
     // We include the nav first, cause the modal layout depends of it
     includeLayout('nav', 'header.html').then(
         result => {
             makeActive();
             toggleResponsiveMenu();
+            
 
             // Now we include the modal layout before execute openModal()
             includeLayout('myModal', 'modal.html').then(
@@ -25,13 +43,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     openModal();
                 }
             ).catch(err => console.log(err));
+            
+            // Include the footer
+            includeLayout('footer', 'footer.html');
+
         }
     ).catch( err => console.log(err));
 
-    // None event depends of the footer, so we can include it later or at  any time
-    includeLayout('footer', 'footer.html');
-    // The dropdown() too
+    // We can execute dropdwon() later or at  any time
     dropdown();
+    
 });
 
 
@@ -72,20 +93,26 @@ function includeLayout(id, url) {
     let baseUrl = '/views/layouts/';
 
     let element = document.getElementById(id);
+    let loader = document.getElementById('loader');
 
     return new Promise( (resolve, reject ) => {
         let xhr = new XMLHttpRequest();
+
         xhr.open('GET', `${baseUrl}${url}`, true);
         xhr.onreadystatechange = () => {
             
-            if (xhr.readyState === 4) {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
 
                 if(xhr.status === 200) {
                     let response = xhr.responseText;
                     element.innerHTML = response
                     resolve('Layout loaded successfully !');
                 }
-                reject('Layout not loaded !')
+                reject('Layout not loaded !');
+                loader.style.display = 'none';
+
+            } else {
+                loader.style.display = 'block'
             }
         }
         xhr.send();
