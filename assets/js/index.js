@@ -9,17 +9,37 @@
  */
 
 
+
 // Wait while the DOM content be loaded before execute functions
 window.addEventListener('DOMContentLoaded', (e) => {
-    makeActive();
-    openModal();
-    toggleResponsiveMenu()
+
+    // We include the nav first, cause the modal layout depends of it
+    includeLayout('nav', 'header.html').then(
+        result => {
+            makeActive();
+            toggleResponsiveMenu();
+
+            // Now we include the modal layout before execute openModal()
+            includeLayout('myModal', 'modal.html').then(
+                result => {
+                    openModal();
+                }
+            ).catch(err => console.log(err));
+        }
+    ).catch( err => console.log(err));
+
+    // None event depends of the footer, so we can include it later or at  any time
+    includeLayout('footer', 'footer.html');
+    // The dropdown() too
+    dropdown();
 });
+
+
 
 
 /**
  * 
- *  Toggle to active class when the page is activ
+ *  Toggle to active class when the page is active
  * 
  */
 function makeActive() {
@@ -39,6 +59,41 @@ function makeActive() {
 
 /**
  * 
+ * Include layouts: header, footer
+ * 
+ * @param id string : The id of the container of the layout
+ * @param url string :  The path to the layout file
+ * 
+ * @returns void
+ */
+
+function includeLayout(id, url) {
+
+    let baseUrl = '/views/layouts/';
+
+    let element = document.getElementById(id);
+
+    return new Promise( (resolve, reject ) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', `${baseUrl}${url}`, true);
+        xhr.onreadystatechange = () => {
+            
+            if (xhr.readyState === 4) {
+
+                if(xhr.status === 200) {
+                    let response = xhr.responseText;
+                    element.innerHTML = response
+                    resolve('Layout loaded successfully !');
+                }
+                reject('Layout not loaded !')
+            }
+        }
+        xhr.send();
+    });
+}
+
+/**
+ * 
  * Toggle to responsive menu
  * 
  */
@@ -49,8 +104,10 @@ function toggleResponsiveMenu() {
     
     trigger.addEventListener('click', (e)=> {
         e.preventDefault();
+
         navbar.classList.toggle('responsive');
-        fa.classList.toggle('fa-times')
+
+        // Change the menu icon according to the status : closing or opening
         if (fa.classList.contains('fa-bars')) {
             fa.classList.remove('fa-bars'); 
             fa.classList.add('fa-times');
@@ -60,6 +117,30 @@ function toggleResponsiveMenu() {
         }
         
     });
+}
+
+/**
+ * 
+ * Dropdown for the faq
+ * 
+ */
+function dropdown() {
+    let dropdown = document.querySelectorAll('.dropdown-title');
+
+    dropdown.forEach(dp => {
+
+        dp.addEventListener('click', (e)=>{
+            // Get icon and body of dropdown
+            let icon = e.target.lastElementChild;
+            let body = e.target.nextElementSibling;
+
+            // Toggle class
+            icon.classList.toggle('dropdown-icon');
+            body.classList.toggle('dropdown-body-block');
+        });
+
+    });
+
 }
 
 
