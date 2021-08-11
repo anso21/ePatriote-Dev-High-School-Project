@@ -8,7 +8,7 @@
  * 
  */
 
-window.addEventListener('DOMCOntentLoaded', (e)=>{
+window.addEventListener('DOMContentLoaded', (e)=>{
     let form =  document.querySelector('form');
     let alertField = document.querySelector('.alert');
     let url = ""    //link to the contact file located on the server
