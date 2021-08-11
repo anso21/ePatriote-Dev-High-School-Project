@@ -24,3 +24,9 @@ form{
     font-style:normal;
     font-size: 14px;
 }
+
+.auth-form p a{
+    text-decoration: none;
+    color: #081D5B;
+    font-weight: bold;
+}

@@ -45,10 +45,19 @@ function makeActive() {
 function toggleResponsiveMenu() {
     let trigger = document.getElementById('menu-icon');
     let navbar = document.getElementById('nav-items');
-
+    let fa = trigger.children[0];
+    
     trigger.addEventListener('click', (e)=> {
         e.preventDefault();
         navbar.classList.toggle('responsive');
+        fa.classList.toggle('fa-times')
+        if (fa.classList.contains('fa-bars')) {
+            fa.classList.remove('fa-bars'); 
+            fa.classList.add('fa-times');
+        } else{
+            fa.classList.add('fa-bars');
+            fa.classList.remove('fa-times');
+        }
         
     });
 }
