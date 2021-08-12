@@ -100,4 +100,26 @@
     .modal-body a{
         display: block;
     }
+
+    .navbar.light .container{
+        /* display: flex; */
+        flex-direction: column;
+        /* justify-content: center; */
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .visible{
+        display: block;
+    }
+    .nav.dark .user-info .user-mail{
+        display: none;
+    }
+
+    .nav.dark .icon{
+        display: block;
+    }
+    
 } 
