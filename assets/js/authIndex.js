@@ -42,7 +42,18 @@ window.addEventListener('DOMContentLoaded', (e)=>{
         // openModal();
         includeWithDropdown('coursesLink', ['class'], 'courses', '/views/teachers/courses.html');
         
-    } else if (userType === 'censors') {
+    } else if (userType === 'informatician') {
+            // By default we inculde class infos field like the teacher home
+            includeLayout('stats', '/views/informatician/statistics.html')
+            .then(r => {
+                // dropdown();
+                // openModal();
+            }).catch(err => console.log(err));
+
+        // Teachers navigation
+        includeWithDropdown('statsLink', ['censors'], 'stats', '/views/informatician/statistics.html');
+        includeWithDropdown('censorsLink', ['stats'], 'censors', '/views/informatician/censors.html');
+        
       
     } 
 });
@@ -119,8 +130,10 @@ function includeWithDropdown(linkId,fieldToBeBlank ,id, path, other=false) {
 
 /**
  * 
- * @param {string} id 
- * @param {string} url 
+ * Function to include layouts
+ * 
+ * @param {string} id : id of the target element
+ * @param {string} url : path to the file
  * @returns Promise<string> 
  */
  function includeLayout(id, url) {
