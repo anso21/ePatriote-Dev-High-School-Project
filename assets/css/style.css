@@ -15,7 +15,7 @@ html,body {
 
 .home{
     height: 650px;
-    background: url(/assets/images/header.jpg);
+    background: url(../images/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -190,7 +190,7 @@ html,body {
 }
 
 .banner-contact{
-    background-image: url('/assets/images/contactusheader.jpg');
+    background-image: url('../images/contactusheader.jpg');
 }
 
 .col-6{
@@ -278,7 +278,7 @@ textarea.form-control{
 }
 
 .banner-about{
-    background-image: url('/assets/images/aboutUs.png');
+    background-image: url('../images/aboutUs.png');
 }
 
 .about-text p{
@@ -414,7 +414,7 @@ textarea.form-control{
 .loader-content{
     position: relative;
     top: 20%;
-    background-image: url(/assets/images/loading.gif);    
+    background-image: url(../images/loading.gif);    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
