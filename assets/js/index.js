@@ -66,7 +66,6 @@ function makeActive() {
     let navItems = document.querySelectorAll('.nav .nav-link');
     // Get the actual url
     let href = location.href
-    // console.log(href);
 
     // Itterate the navItems to get the active 
     navItems.forEach((item) => {
@@ -109,7 +108,7 @@ function includeLayout(id, url) {
                     resolve('Layout loaded successfully !');
                 }
                 reject('Layout not loaded !');
-                // loader.style.display = 'none';
+                // loader.style.display  = 'none';
 
             } else {
                 // loader.style.display = 'block'
