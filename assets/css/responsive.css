@@ -89,6 +89,7 @@
     }
 
     /* Form */
+    form,
     .auth-form{
         width: 80%;
     }
