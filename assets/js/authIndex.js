@@ -43,19 +43,29 @@ window.addEventListener('DOMContentLoaded', (e)=>{
         includeWithDropdown('coursesLink', ['class'], 'courses', '/views/teachers/courses.html');
         
     } else if (userType === 'informatician') {
-            // By default we inculde class infos field like the teacher home
-            includeLayout('stats', '/views/informatician/statistics.html')
-            .then(r => {
-                // dropdown();
-                // openModal();
-            }).catch(err => console.log(err));
-
-        // Teachers navigation
+            // By default we inculde stats infos field like the informatician home
+            includeLayout('stats', '/views/informatician/statistics.html');
+        // Informatician navigation
         includeWithDropdown('statsLink', ['censors'], 'stats', '/views/informatician/statistics.html');
         includeWithDropdown('censorsLink', ['stats'], 'censors', '/views/informatician/censors.html');
         
       
-    } 
+    } else if (userType === 'censors') {
+        // By default we inculde stats infos field like the censors home
+        includeLayout('students', '/views/censors/students.html')
+        .then(r => {
+            dropdown();
+            // openModal();
+        }).catch(err => console.log(err));
+
+    // Teachers navigation
+    includeWithDropdown('studentsLink', ['teachers', 'parents', 'programs'], 'students', '/views/censors/students.html');
+    includeWithDropdown('parentsLink', ['students', 'teachers', 'programs'], 'parents', '/views/censors/parents.html');
+    includeWithDropdown('teachersLink', ['students', 'parents', 'programs'], 'teachers', '/views/censors/teachers.html');
+    includeWithDropdown('programsLink', ['students', 'parents', 'teachers'], 'programs', '/views/censors/programs.html');
+    
+  
+}  
 });
 
 

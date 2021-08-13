@@ -1,6 +1,6 @@
 This website uses XMLHttpRequest, so it very important to run the project on some server.
 If server not used, you won't be able to see all parts of this site such as the header, footer components.
 
-Personnaly, i used the Go Lve extension on my Vs Code. This extension allows the running of the statics sites.
+Personnaly, i use the Live server extension on my Vs Code. This extension allows the running of the statics sites. You can also use xampp, wamp, lamp or mamp.
 
 Thank you and enjoy 😉

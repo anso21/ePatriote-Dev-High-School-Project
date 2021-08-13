@@ -1,0 +1,36 @@
+<!-- Programming form -->
+<form style="background-color: transparent;">
+    <h2>Programmation de devoir</h2>
+    <div class="form-group">
+        <label for="classname"><b>Classe</b></label>
+            <select name="class" id="classname" class="form-control" required>
+                <option value="seconde">Seconde &centerdot; 2nde</option>
+                <option value="première">Première &centerdot; 1ere</option>
+                <option value="terminale">Teminale &centerdot; Tle</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="course"><b>Matière enseignée</b></label>
+        <select name="course" id="course" class="form-control" required>
+            <option value="PA">Programmation Avancée </option>
+            <option value="API">Algorithmique pour l’ingénieur</option>
+            <option value="ASL">Administration de serveur linux</option>
+            <option value="HTTP">HTTP</option>
+            <option value="Nginx">Nginx</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="date"><b>Date</b></label>
+        <input type="date" class="form-control" name="date" id="date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="hour"><b>Heure de début</b></label>
+        <input type="time" class="form-control" name="hour" id="hour" required>
+    </div>
+
+    <button type="submit" class="btn form-btn">Programmer</button>
+
+</form>
