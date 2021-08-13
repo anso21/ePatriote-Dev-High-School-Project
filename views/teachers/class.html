@@ -1,0 +1,187 @@
+<div class="container programs">
+    <h2>Mes classes</h2>
+
+    <!-- Programming btn -->
+    <button class="btn form-btn" id="pBtn">Programmer une interrogation</button>
+                
+    <!-- Programming form -->
+    <form id="pForm" >
+        <div class="form-group">
+            <label for="classname"><b>Classe</b></label>
+                <select name="class" id="classname" class="form-control" required>
+                    <option value="seconde">Seconde &centerdot; 2nde</option>
+                    <option value="première">Première &centerdot; 1ere</option>
+                    <option value="terminale">Teminale &centerdot; Tle</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label for="course"><b>Matière enseignée</b></label>
+            <select name="course" id="course" class="form-control" required>
+                <option value="PA">Programmation Avancée </option>
+                <option value="API">Algorithmique pour l’ingénieur</option>
+                <option value="ASL">Administration de serveur linux</option>
+                <option value="HTTP">HTTP</option>
+                <option value="Nginx">Nginx</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="date"><b>Date</b></label>
+            <input type="date" class="form-control" name="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hour"><b>Heure de début</b></label>
+            <input type="time" class="form-control" name="hour" id="hour" required>
+        </div>
+
+        <button type="submit" class="btn form-btn">Programmer</button>
+    
+    </form>
+
+    <div class="dropdown">
+        <div class="dropdown-title">
+            Second &centerdot; 2nde <i class="fa fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-body">
+            <table>
+                <tr>
+                    <th rowspan=2>Nom et prénoms</th>
+                    <th colspan="2">Interrogations</th>
+                    <th colspan="3">Devoirs</th>
+                    <th rowspan="2">Actions</th>
+                
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>AGBOLOSSOU Germain</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>18</td>
+                    <td> <i class="fa fa-edit" id="1"></i></td>
+                  </tr>  
+
+                  <tr>
+                    <td>KOFFI Clément</td>
+                    <td>08</td>
+                    <td>14</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td>18</td>
+                    <td> <i class="fa fa-edit" id="2"></i></td>
+                  </tr>
+                  <tr>
+                    <td>GLELE Manonfi</td>
+                    <td>20</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>19</td>
+                    <td>19</td>
+                    <td> <i class="fa fa-edit" id="3"></i></td>
+                  </tr>
+            </table>
+        </div>
+        
+    </div>
+
+    <div class="dropdown">
+        <div class="dropdown-title">
+            Terminale &centerdot; Tle <i class="fa fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-body">
+
+            <table>
+                <tr>
+                    <th rowspan=2>Nom et prénoms</th>
+                    <th colspan="2">Interrogations</th>
+                    <th colspan="3">Devoirs</th>
+                    <th rowspan="2">Actions</th>
+                
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>AGBOLOSSOU Germain</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>18</td>
+                    <td> <i class="fa fa-edit"></i></td>
+                  </tr>  
+
+                  <tr>
+                    <td>KOFFI Clément</td>
+                    <td>08</td>
+                    <td>14</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td>18</td>
+                    <td> <i class="fa fa-edit"></i></td>
+                  </tr>
+                  <tr>
+                    <td>GLELE Manonfi</td>
+                    <td>20</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>19</td>
+                    <td>19</td>
+                    <td> <i class="fa fa-edit"></i></td>
+                  </tr>
+            </table> 
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<!-- Programming form -->
+<div class="modal" id="myModal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+           <form class="auth-form">
+                <div class="form-group">
+                    <label for="date"><b>Nom</b></label>
+                    <input type="text" class="form-control" value="AGBOLOSSOU Germain" name="name" id="name" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Notes Interrogations</b></label>
+                    <input type="number" min="0" max="20" class="form-control" name="first-interro" id="firstInterro" placeholder="1ère interrogation" value="20">
+                    <input type="number" min="0" max="20" class="form-control" name="second-interro" id="secondInterro" placeholder="2ème interrogation">
+                    <input type="number" min="0" max="20" class="form-control" name="third-interro" id="thirdInterro" placeholder="3ème interrogation">
+                </div>
+            
+                <div class="form-group">
+                    <label><b>Notes de devoirs</b></label>
+                    <input type="number" min="0" max="20" class="form-control" name="firstExam" id="firstExam" placeholder="1er devoir" value="15">
+                    <input type="number" min="0" max="20" class="form-control" name="secondExam" id="secondExam" placeholder="2e devoir">
+                </div>
+            
+                <button type="submit" class="btn form-btn">Enregistrer</button>
+            
+           </form>
+        </div>
+    </div>
+</div>
