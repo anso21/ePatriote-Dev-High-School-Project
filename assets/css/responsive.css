@@ -1,6 +1,4 @@
-/* Extra small devices (phones, 600px and down) */
-@media screen and (max-width: 600px) {
-    /* navbar */
+@media screen and (max-width: 830px) {
     .nav a.nav-link {display: none;}
     .nav a.menu-icon{
       display: block;
@@ -31,7 +29,6 @@
         text-align: left;
     }
 
-  
     /* Add Animation */
     @-webkit-keyframes animatetop {
         from {top: 50px; opacity:0} 
@@ -47,6 +44,11 @@
         display: none;
     }
 
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+    
     /* Overview responsive */
     .overview-container{
         display: block;
